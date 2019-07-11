@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../partials/head %>
+    <title>static html</title>
+    <style>
+        a {
+            text-decoration: none;
+        };
+    </style>
+</head>
+<body class="container">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h1>Colors Galore</h1>
+            <p>Colors, hex and RGB</p>
+            <h2>What do we have here?</h2>            
+                <% {colors.forEach((color) => { %>
+                    <ul><li><a href="color/<%= color.name %>"><%= color.name %>:</a><%= color.hex %></li></ul>
+                <% });}  %>
+                    
+            <p><%= tagline %></p>
+        </div>
+    </main>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+</html>
